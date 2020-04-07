@@ -2,10 +2,11 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   def show
   	@book = Book.find(params[:id])
+    @book_comment = BookComment.new
   end
 
   def index
-  	@books =   Book.all #一覧表示するためにBookモデルの情報を全てくださいのall
+  	@books = Book.all #一覧表示するためにBookモデルの情報を全てくださいのall
     @book = Book.new
   end
 
